@@ -1,16 +1,9 @@
+import { CustomTrackingUiComponent } from './custom-tracking-ui/custom-tracking-ui.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { AppRoutingModule } from './app-routing-module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
-import { CustomTrackingUiComponent } from './custom-tracking-ui/custom-tracking-ui.component';
-
-@NgModule({
-  declarations: [AppComponent, CustomTrackingUiComponent],
-  imports: [BrowserModule],
-=======
 import { PlayerInformationComponent } from './player-information/player-information.component';
 import { GuardianInformationComponent } from './guardian-information/guardian-information.component';
 import { TournamentTeamSignupComponent } from './tournament-team-signup/tournament-team-signup.component';
@@ -25,6 +18,7 @@ import { TournamentBillingInfoComponent } from './tournament-billing-info/tourna
 @NgModule({
   declarations: [
     AppComponent,
+    CustomTrackingUiComponent,
     PlayerInformationComponent,
     GuardianInformationComponent,
     TournamentTeamSignupComponent,
@@ -41,7 +35,6 @@ import { TournamentBillingInfoComponent } from './tournament-billing-info/tourna
     AppRoutingModule
   ],
   exports: [RouterModule],
->>>>>>> 45b486fcb4543ab019309a529ce1a9d519d5c542
   providers: [],
   bootstrap: [AppComponent]
 })

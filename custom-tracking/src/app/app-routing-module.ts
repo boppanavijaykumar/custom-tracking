@@ -1,3 +1,4 @@
+import { CustomTrackingUiComponent } from './custom-tracking-ui/custom-tracking-ui.component';
 import { TournamentBillingInfoComponent } from './tournament-billing-info/tournament-billing-info.component';
 import { EventBillingInfoComponent } from './event-billing-info/event-billing-info.component';
 import { EventRegistrationComponent } from './event-registration/event-registration.component';
@@ -10,12 +11,16 @@ import { GuardianInformationComponent } from './guardian-information/guardian-in
 import { PlayerInformationComponent } from './player-information/player-information.component';
 const routes: Routes = [
     {
+        path: 'code-tracking',
+        component: CustomTrackingUiComponent
+    },
+    {
         path: 'registration',
         component: RegistrationComponent
     },
     {
         path: '',
-        redirectTo: '/registration',
+        redirectTo: '/code-tracking',
         pathMatch: 'full'
     },
     {
