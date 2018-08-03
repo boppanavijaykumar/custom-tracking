@@ -11,17 +11,17 @@ import { GuardianInformationComponent } from './guardian-information/guardian-in
 import { PlayerInformationComponent } from './player-information/player-information.component';
 const routes: Routes = [
     {
+        path: '',
+        redirectTo: '/code-tracking',
+        pathMatch: 'full'
+    },
+    {
         path: 'code-tracking',
         component: CustomTrackingUiComponent
     },
     {
         path: 'registration',
         component: RegistrationComponent
-    },
-    {
-        path: '',
-        redirectTo: '/code-tracking',
-        pathMatch: 'full'
     },
     {
         path: 'event-signup',

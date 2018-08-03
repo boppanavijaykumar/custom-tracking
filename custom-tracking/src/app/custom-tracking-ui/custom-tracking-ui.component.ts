@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./custom-tracking-ui.component.css']
 })
 export class CustomTrackingUiComponent implements OnInit {
+public header: string;
+public body: string;
+public registration: string;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {  }
 
 }

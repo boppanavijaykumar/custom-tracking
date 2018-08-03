@@ -14,6 +14,7 @@ import { RouterModule } from '../../node_modules/@angular/router';
 import { EventRegistrationComponent } from './event-registration/event-registration.component';
 import { EventBillingInfoComponent } from './event-billing-info/event-billing-info.component';
 import { TournamentBillingInfoComponent } from './tournament-billing-info/tournament-billing-info.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TournamentBillingInfoComponent } from './tournament-billing-info/tourna
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   exports: [RouterModule],
   providers: [],
