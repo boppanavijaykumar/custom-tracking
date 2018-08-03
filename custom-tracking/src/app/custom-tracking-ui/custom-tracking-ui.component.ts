@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../shared/services/data.service';
 
 @Component({
   selector: 'app-custom-tracking-ui',
@@ -6,12 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./custom-tracking-ui.component.css']
 })
 export class CustomTrackingUiComponent implements OnInit {
-public header: string;
-public body: string;
-public registration: string;
+ public body: string;
+// public registration: string;
 
-  constructor() { }
 
-  ngOnInit() {  }
+  constructor(private data: DataService) { }
 
+  ngOnInit() {
+    this.update();
+   }
+   update() {
+    console.log(this.body);
+    this.data.changeMessage(this.body);
+    // this.data.currentMessage.subscribe(message => this.data.header = message);
+
+   }
 }

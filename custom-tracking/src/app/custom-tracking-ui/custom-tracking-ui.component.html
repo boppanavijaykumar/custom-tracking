@@ -20,21 +20,21 @@
     <h2>Header</h2>
     <p>This code will be added in the head section of your site pages.</p>
     <form>
-      <textarea class="text-box" name="message" rows="10" cols="30" [(ngModel)] = "header"></textarea>
+      <textarea class="text-box" name="message" rows="10" cols="30"  [(ngModel)] ="header"></textarea>
     </form>
 
     <h2>Body</h2>
-    <p>This code will be added in the body section of your site pages.</p>
+    <p>This code will be added in the body section updateof your site pages.</p>
     <form>
-      <textarea class="text-box" name="message" rows="10" cols="30" [(ngModel)] = "body"></textarea>
+      <textarea class="text-box" name="message" rows="10" cols="30"  [(ngModel)] ="body" ></textarea>
     </form>
 
     <h2>Successful Event Registration</h2>
     <p>This code will be triggered after a successful event registration so you can track conversions.</p>
     <form>
-      <textarea class="text-box" name="message" rows="10" cols="30" [(ngModel)] = "registration"></textarea>
+      <textarea class="text-box" name="message" rows="10" cols="30"  [(ngModel)] ="registration"></textarea>
       <div>
-        <button routerLink="/registration" routerLinkActive="active">Update Code</button>
+        <button routerLink="/registration" routerLinkActive="active" (click)= "update()">Update Code</button>
       </div>
     </form>
   </section>

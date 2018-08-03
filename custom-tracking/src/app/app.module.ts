@@ -1,3 +1,4 @@
+import { DataService } from './shared/services/data.service';
 import { CustomTrackingUiComponent } from './custom-tracking-ui/custom-tracking-ui.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { AppRoutingModule } from './app-routing-module';
@@ -37,7 +38,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,3 +1,4 @@
+import { DataService } from './../shared/services/data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./guardian-information.component.css']
 })
 export class GuardianInformationComponent implements OnInit {
-
-  constructor() { }
+  message: string;
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+    this.data.currentMessage.subscribe(message => this.message = message);
+
   }
 
 }
