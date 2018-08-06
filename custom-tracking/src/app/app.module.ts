@@ -1,4 +1,4 @@
-import { DataService } from './shared/services/data.service';
+import { HttpClientModule } from '@angular/common/http';
 import { CustomTrackingUiComponent } from './custom-tracking-ui/custom-tracking-ui.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { AppRoutingModule } from './app-routing-module';
@@ -15,7 +15,8 @@ import { RouterModule } from '../../node_modules/@angular/router';
 import { EventRegistrationComponent } from './event-registration/event-registration.component';
 import { EventBillingInfoComponent } from './event-billing-info/event-billing-info.component';
 import { TournamentBillingInfoComponent } from './tournament-billing-info/tournament-billing-info.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { TrackingDetailsService } from './shared/services/tracking-details.service';
 
 @NgModule({
   declarations: [
@@ -35,10 +36,12 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   exports: [RouterModule],
-  providers: [DataService],
+  providers: [TrackingDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
