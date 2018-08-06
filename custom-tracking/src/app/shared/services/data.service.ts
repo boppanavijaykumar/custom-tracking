@@ -1,19 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class DataService {
-
-  public header: string;
-  public body: string;
-  public registration: string;
-  private messageSource = new BehaviorSubject<any>(this.header);
-  currentMessage = this.messageSource.asObservable();
-
-  constructor() { }
-
-  public changeMessage(message) {
-    this.messageSource.next(message);
+  constructor() {
+    // (function(d, script) {
+    //   script = d.createElement('script');
+    //   script.type = 'text/javascript';
+    //   script.async = true;
+    //   script.onload = function() {};
+    //   d.getElementsByTagName('head')[0].appendChild(script);
+    // })(document);
   }
-
 }

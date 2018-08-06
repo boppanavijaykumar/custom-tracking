@@ -9,10 +9,10 @@ import { DataService } from '../shared/services/data.service';
 export class RegistrationComponent implements OnInit {
   message: string;
 
-  constructor(private data: DataService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.data.currentMessage.subscribe(message => this.message = message);
+   // this.data.currentMessage.subscribe(message => this.message = message);
   }
 
 }

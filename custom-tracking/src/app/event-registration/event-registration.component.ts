@@ -11,6 +11,6 @@ export class EventRegistrationComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.data.currentMessage.subscribe(message => this.message = message);
+    // this.data.currentMessage.subscribe(message => this.message = message);
   }
 }

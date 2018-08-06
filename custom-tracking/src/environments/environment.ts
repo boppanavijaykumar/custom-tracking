@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  config: {
+    redirectUrl: 'http://localhost:4200/',
+    baseUrl: 'http://localhost:54298/api/',
+    cacheLocation: 'localStorage'
+  }
 };
 
 /*

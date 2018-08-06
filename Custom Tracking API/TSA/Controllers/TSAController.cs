@@ -10,29 +10,30 @@ using TSA.Models;
 namespace TSA.Controllers
 {
     [Produces("application/json")]
-    [Route("api/TSA")]
+    [Route("api/tsa")]
     public class TSAController : Controller
     {
         [HttpGet]
-        [Route ("{OrgId:int}")]
-        public ActionResult GetById(int OrgId)
+        [Route ("get/{OrgId:int}")]
+        public ActionResult GetTrackingDetails(int OrgId)
         {
             using (var OrgContext = new TsaContext()) {
-                var OrgDetails = new List<CustomTrackingCode>();
-                OrgDetails = OrgContext.CustomTrackingCode.ToList();
+               var OrgDetails = OrgContext.CustomTrackingCode.Where(q => q.OrgId == OrgId).SingleOrDefault();
                 return Ok(OrgDetails);
             }
         }
 
         [HttpPost]
-        public ActionResult AddOrg([FromBody]CustomTrackingCode OrgDetails)
+        [Route ("add")]
+        public ActionResult AddTrackingDetails([FromBody]CustomTrackingCode OrgDetails)
         {
             using (var OrgContext = new TsaContext())
             {
                 OrgContext.CustomTrackingCode.Add(OrgDetails);
                 OrgContext.SaveChanges();
             }
-                return Ok("Added");
+                return Ok(OrgDetails);
         }
     }
 }
+
