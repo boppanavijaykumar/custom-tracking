@@ -1,5 +1,8 @@
+import { ActivatedRoute } from '@angular/router';
 import { DataService } from './../shared/services/data.service';
 import { Component, OnInit } from '@angular/core';
+import { ITrackingDetails } from '../shared/interfaces/tracking-details.interface';
+import { TrackingDetailsService } from '../shared/services/tracking-details.service';
 
 @Component({
   selector: 'app-event-registration',
@@ -7,10 +10,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-registration.component.css']
 })
 export class EventRegistrationComponent implements OnInit {
-  message: string;
-  constructor(private data: DataService) { }
+  trackingDetails = {} as ITrackingDetails;
+  orgId: number;
+  head: string;
+  body: string;
+  getTrackingDetails(orgId: number) {
+    this.trackingDetailsService.getTrackingDetails(orgId).subscribe(result => {
+      this.trackingDetails = result;
+      console.log(result);
+      this.dataservice.addScript(result);
+    });
+  }
+
+  constructor(
+    public dataservice: DataService,
+    public route: ActivatedRoute,
+    public trackingDetailsService: TrackingDetailsService
+  ) {
+    this.route.params.subscribe(params => {
+      this.orgId = params['orgId'];
+      this.orgId = Number(this.orgId);
+    });
+  }
 
   ngOnInit() {
-    // this.data.currentMessage.subscribe(message => this.message = message);
+    this.getTrackingDetails(this.orgId);
   }
 }

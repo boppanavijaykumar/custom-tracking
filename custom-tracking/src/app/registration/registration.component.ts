@@ -20,21 +20,23 @@ export class RegistrationComponent implements OnInit {
   getTrackingDetails(orgId: number) {
     this.trackingDetailsService.getTrackingDetails(orgId).subscribe(result => {
       this.trackingDetails = result;
-      console.log(orgId);
+      console.log(result);
+      this.dataservice.addScript(result);
     });
   }
 
   constructor(
     public dataservice: DataService,
     public route: ActivatedRoute,
-    public trackingDetailsService: TrackingDetailsService
+    public trackingDetailsService: TrackingDetailsService,
   ) {
     this.route.params.subscribe(params => {
       this.orgId = params['orgId'];
       this.orgId = Number(this.orgId);
     });
-      this.getTrackingDetails(this.orgId);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getTrackingDetails(this.orgId);
+  }
 }
