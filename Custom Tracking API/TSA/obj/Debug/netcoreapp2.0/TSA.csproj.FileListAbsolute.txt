@@ -20,3 +20,14 @@ D:\Assignments\Git\custom-tracking\Custom Tracking API\TSA\obj\Debug\netcoreapp2
 D:\Assignments\Git\custom-tracking\Custom Tracking API\TSA\obj\Debug\netcoreapp2.0\TSA.AssemblyInfo.cs
 D:\Assignments\Git\custom-tracking\Custom Tracking API\TSA\obj\Debug\netcoreapp2.0\TSA.dll
 D:\Assignments\Git\custom-tracking\Custom Tracking API\TSA\obj\Debug\netcoreapp2.0\TSA.pdb
+D:\assignments\custom-tracking\Custom Tracking API\TSA\bin\Debug\netcoreapp2.0\TSA.deps.json
+D:\assignments\custom-tracking\Custom Tracking API\TSA\bin\Debug\netcoreapp2.0\TSA.runtimeconfig.json
+D:\assignments\custom-tracking\Custom Tracking API\TSA\bin\Debug\netcoreapp2.0\TSA.runtimeconfig.dev.json
+D:\assignments\custom-tracking\Custom Tracking API\TSA\bin\Debug\netcoreapp2.0\TSA.dll
+D:\assignments\custom-tracking\Custom Tracking API\TSA\bin\Debug\netcoreapp2.0\TSA.pdb
+D:\assignments\custom-tracking\Custom Tracking API\TSA\obj\Debug\netcoreapp2.0\TSA.csprojAssemblyReference.cache
+D:\assignments\custom-tracking\Custom Tracking API\TSA\obj\Debug\netcoreapp2.0\TSA.csproj.CoreCompileInputs.cache
+D:\assignments\custom-tracking\Custom Tracking API\TSA\obj\Debug\netcoreapp2.0\TSA.AssemblyInfoInputs.cache
+D:\assignments\custom-tracking\Custom Tracking API\TSA\obj\Debug\netcoreapp2.0\TSA.AssemblyInfo.cs
+D:\assignments\custom-tracking\Custom Tracking API\TSA\obj\Debug\netcoreapp2.0\TSA.dll
+D:\assignments\custom-tracking\Custom Tracking API\TSA\obj\Debug\netcoreapp2.0\TSA.pdb

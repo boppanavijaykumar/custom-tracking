@@ -9,7 +9,7 @@ namespace TSA.Data.Configurations
         public void Configure(EntityTypeBuilder<CustomTrackingCode> builder)
         {
             
-            builder.ToTable("TrackingDetails");
+            builder.ToTable("CustomTrackingCode");
 
             //Primary Key
             builder.HasKey(k => k.OrgId);

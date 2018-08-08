@@ -15,7 +15,7 @@ export class CustomTrackingUiComponent implements OnInit {
   public trackingDetailsForm: FormGroup;
   submitted: boolean;
   trackingDetails = {} as ITrackingDetails;
-  orgId: number;
+  orgId = 18;
   head: string;
   body: string;
   eventRegistration: string;
@@ -35,7 +35,17 @@ export class CustomTrackingUiComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.trackingDetailsService.getTrackingDetails(this.orgId)
+    .subscribe( result => {
+      console.log(result);
+      this.head = result.head;
+      this.body = result.body;
+      this.eventRegistration = result.eventRegistration;
+    }, error => {
+      console.log(error);
+    });
+  }
 
   public submit() {
     this.submitted = true;

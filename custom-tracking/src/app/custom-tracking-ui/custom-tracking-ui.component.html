@@ -3,13 +3,13 @@
     <div [formGroup]="trackingDetailsForm">
       <h2>Header</h2>
       <p>This code will be added in the head section of your site pages.</p>
-      <textarea class="text-box" name="message" rows="10" cols="30" formControlName="head"></textarea>
+      <textarea class="text-box" name="message" rows="10" cols="30" formControlName="head" [value]="head"></textarea>
       <h2>Body</h2>
       <p>This code will be added in the body section updateof your site pages.</p>
-      <textarea class="text-box" name="message" rows="10" cols="30" formControlName="body"></textarea>
+      <textarea class="text-box" name="message" rows="10" cols="30" formControlName="body" [value]="body"></textarea>
       <h2>Successful Event Registration</h2>
       <p>This code will be triggered after a successful event registration so you can track conversions.</p>
-      <textarea class="text-box" name="message" rows="10" cols="30" formControlName="eventRegistration"></textarea>
+      <textarea class="text-box" name="message" rows="10" cols="30" formControlName="eventRegistration" [value]="eventRegistration"></textarea>
       <div>
         <button (click)="submit()">Update Code</button>
       </div>
