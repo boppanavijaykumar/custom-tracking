@@ -20,7 +20,7 @@ const routes: Routes = [
         component: CustomTrackingUiComponent
     },
     {
-        path: 'registration',
+        path: 'registration/:orgId',
         component: RegistrationComponent
     },
     {

@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class TrackingDetailsService {
-  public header: string;
+  public head: string;
   public body: string;
   public registration: string;
 
@@ -34,5 +34,10 @@ export class TrackingDetailsService {
   }
   public handleError(arg0: any): any {
     throw new Error('not found');
+  }
+
+  public getTrackingDetails(orgId: number): Observable<ITrackingDetails> {
+    const getTrackingDetailsUrl = environment.config.baseUrl + `tsa/get/${orgId}`;
+    return this.http.get<ITrackingDetails>(getTrackingDetailsUrl);
   }
 }

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../shared/services/data.service';
 import { TrackingDetailsService } from '../shared/services/tracking-details.service';
 import { ITrackingDetails } from '../shared/interfaces/tracking-details.interface';
+import { Route, Router } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-custom-tracking-ui',
@@ -13,8 +14,20 @@ import { ITrackingDetails } from '../shared/interfaces/tracking-details.interfac
 export class CustomTrackingUiComponent implements OnInit {
   public trackingDetailsForm: FormGroup;
   submitted: boolean;
+  trackingDetails = {} as ITrackingDetails;
+  orgId: number;
+  head: string;
+  body: string;
+  eventRegistration: string;
 
-  constructor( private trackingDetailsService: TrackingDetailsService, public formBuilder: FormBuilder) {
+  getTrackingDetails(orgId: number) {
+    this.trackingDetailsService.getTrackingDetails(orgId)
+        .subscribe(result => {
+            this.trackingDetails = result;
+        });
+        }
+
+  constructor( private trackingDetailsService: TrackingDetailsService, public formBuilder: FormBuilder, private router: Router) {
     this.trackingDetailsForm = this.formBuilder.group({
       head: this.formBuilder.control('', []),
       body: this.formBuilder.control('', []),
@@ -31,7 +44,7 @@ export class CustomTrackingUiComponent implements OnInit {
     if (this.trackingDetailsForm.valid) {
         this.trackingDetailsService.addTrackingDetails(trackingDetails)
             .subscribe(result => {
-                alert('successfully');
+                this.router.navigate(['/registration/' + result.orgId]);
             }, (error) => {
                 console.log(error);
             });

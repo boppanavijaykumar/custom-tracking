@@ -1,3 +1,4 @@
+import { DataService } from './shared/services/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomTrackingUiComponent } from './custom-tracking-ui/custom-tracking-ui.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -41,7 +42,7 @@ import { TrackingDetailsService } from './shared/services/tracking-details.servi
     HttpClientModule
   ],
   exports: [RouterModule],
-  providers: [TrackingDetailsService],
+  providers: [TrackingDetailsService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
