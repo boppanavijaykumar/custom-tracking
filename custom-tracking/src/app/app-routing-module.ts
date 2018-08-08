@@ -24,7 +24,7 @@ const routes: Routes = [
         component: RegistrationComponent
     },
     {
-        path: 'event-signup',
+        path: 'event-signup/:orgId',
         component: EventRegistrationComponent
     },
     {
