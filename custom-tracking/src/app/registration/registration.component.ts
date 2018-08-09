@@ -1,7 +1,5 @@
 import { EventRegistrationService } from './../shared/services/event-registration.service';
 import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
-import { EventRegistrationComponent } from './../event-registration/event-registration.component';
-import { HttpHeaders } from '@angular/common/http';
 import { ITrackingDetails } from './../shared/interfaces/tracking-details.interface';
 import { TrackingDetailsService } from './../shared/services/tracking-details.service';
 import { DataService } from './../shared/services/data.service';
@@ -14,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
   trackingDetails = {} as ITrackingDetails;
-  orgId: number;
+  orgId = 35;
   head: string;
   body: string;
   eventRegistration: string;

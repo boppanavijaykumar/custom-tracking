@@ -9,6 +9,7 @@ import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class TrackingDetailsService {
+  public orgId = 35;
   public head: string;
   public body: string;
   public registration: string;
@@ -19,22 +20,8 @@ export class TrackingDetailsService {
     trackingDetails: ITrackingDetails
   ): Observable<ITrackingDetails> {
     const url = environment.config.baseUrl + 'tsa/add';
-    const httpRequest = this.http
-      .request<ITrackingDetails>('POST', url, {
-        body: JSON.stringify(trackingDetails),
-        headers: httpOptions.headers
-      })
-      .pipe(map((json: any) => {
-        if (json === null || json === undefined) {
-          return null;
-        }
-        return json;
-      })
-      , catchError(err => this.handleError(err)));
-    return httpRequest;
-  }
-  public handleError(arg0: any): any {
-    throw new Error('not found');
+    return this.http
+      .post<ITrackingDetails>(url, trackingDetails);
   }
 
   public getTrackingDetails(orgId: number): Observable<TrackingDetails> {

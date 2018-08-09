@@ -13,7 +13,7 @@ export class CustomTrackingUiComponent implements OnInit {
   public trackingDetailsForm: FormGroup;
   submitted: boolean;
   trackingDetails = {} as ITrackingDetails;
-  orgId: number;
+  orgId = 35;
   head: string;
   body: string;
   eventRegistration: string;
@@ -24,8 +24,12 @@ export class CustomTrackingUiComponent implements OnInit {
     });
   }
 
-  constructor(private trackingDetailsService: TrackingDetailsService, public formBuilder: FormBuilder, private router: Router
-  , private route: ActivatedRoute) {
+  constructor(
+    private trackingDetailsService: TrackingDetailsService,
+    public formBuilder: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
     this.trackingDetailsForm = this.formBuilder.group({
       orgId: this.formBuilder.control('', []),
       head: this.formBuilder.control('', []),
@@ -35,18 +39,21 @@ export class CustomTrackingUiComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.route.params.subscribe(params => {
-    //   this.orgId = params['orgId'];
-    //   this.orgId = Number(this.orgId);
-    this.trackingDetailsService.getTrackingDetails(this.orgId)
-    .subscribe( result => {
-      console.log(result);
-      this.head = result.head;
-      this.body = result.body;
-      this.eventRegistration = result.eventRegistration;
-    }, error => {
-      console.log(error);
+    this.route.params.subscribe(params => {
+      this.orgId = params['orgId'];
+      this.orgId = Number(this.orgId);
     });
+    this.trackingDetailsService.getTrackingDetails(this.orgId).subscribe(
+      result => {
+        console.log(result);
+        this.head = result.head;
+        this.body = result.body;
+        this.eventRegistration = result.eventRegistration;
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   public submit() {
@@ -55,6 +62,7 @@ export class CustomTrackingUiComponent implements OnInit {
       Object.assign({}, this.trackingDetailsForm.getRawValue())
     );
     console.log(event);
+    trackingDetails.orgId = 35;
     if (this.trackingDetailsForm.valid) {
       this.trackingDetailsService.addTrackingDetails(trackingDetails).subscribe(
         result => {
