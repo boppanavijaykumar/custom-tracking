@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
   trackingDetails = {} as ITrackingDetails;
-  orgId = 35;
+  orgId: number;
   head: string;
   body: string;
   eventRegistration: string;

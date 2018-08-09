@@ -12,11 +12,11 @@ import { PlayerInformationComponent } from './player-information/player-informat
 const routes: Routes = [
     {
         path: '',
-        redirectTo: '/code-tracking',
+        redirectTo: '/code-tracking/:orgId',
         pathMatch: 'full'
     },
     {
-        path: 'code-tracking',
+        path: 'code-tracking/:orgId',
         component: CustomTrackingUiComponent
     },
     {
@@ -28,27 +28,27 @@ const routes: Routes = [
         component: EventRegistrationComponent
     },
     {
-        path: 'players-info',
+        path: 'players-info/:orgId',
         component: PlayerInformationComponent
     },
     {
-        path: 'guardian-info',
+        path: 'guardian-info/:orgId',
         component: GuardianInformationComponent
     },
     {
-        path: 'signup-teams',
+        path: 'signup-teams/:orgId',
         component: TournamentTeamSignupComponent
     },
     {
-        path: 'event-payment',
+        path: 'event-payment/:orgId',
         component: EventBillingInfoComponent
     },
     {
-        path: 'tourny-payment',
+        path: 'tourny-payment/:orgId',
         component: TournamentBillingInfoComponent
     },
     {
-        path: 'successfull-payment',
+        path: 'successfull-payment/:orgId',
         component: SuccessfullPaymentComponent
     }
 ];

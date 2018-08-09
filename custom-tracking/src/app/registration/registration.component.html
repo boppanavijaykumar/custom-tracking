@@ -1,9 +1,6 @@
 <div>
-  <button routerLink="/event-signup/orgId" routerLinkActive="active">Event Registration</button>
-  {{trackingDetails?.head}}
+  <button routerLink="/event-signup/{{orgId}}" routerLinkActive="active">Event Registration</button>
 </div>
 <div>
-  <button routerLink="/signup-teams" routerLinkActive="active">Tournament Registration</button>
-  {{trackingDetails?.body}}
-  {{trackingDetails?.eventRegistration}}
+  <button routerLink="/signup-teams/{{orgId}}" routerLinkActive="active">Tournament Registration</button>
 </div>
