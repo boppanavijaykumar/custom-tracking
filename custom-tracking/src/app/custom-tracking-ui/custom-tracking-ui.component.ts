@@ -13,7 +13,7 @@ export class CustomTrackingUiComponent implements OnInit {
   public trackingDetailsForm: FormGroup;
   submitted: boolean;
   trackingDetails = {} as ITrackingDetails;
-  orgId: number;
+  orgId: 6;
   head: string;
   body: string;
   eventRegistration: string;
@@ -35,9 +35,6 @@ export class CustomTrackingUiComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.route.params.subscribe(params => {
-    //   this.orgId = params['orgId'];
-    //   this.orgId = Number(this.orgId);
     this.trackingDetailsService.getTrackingDetails(this.orgId)
     .subscribe( result => {
       console.log(result);

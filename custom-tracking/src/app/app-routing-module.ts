@@ -12,11 +12,11 @@ import { PlayerInformationComponent } from './player-information/player-informat
 const routes: Routes = [
     {
         path: '',
-        redirectTo: '/code-tracking/:orgId',
+        redirectTo: '/code-tracking',
         pathMatch: 'full'
     },
     {
-        path: 'code-tracking/:orgId',
+        path: 'code-tracking',
         component: CustomTrackingUiComponent
     },
     {
