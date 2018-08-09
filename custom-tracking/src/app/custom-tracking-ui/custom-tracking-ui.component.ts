@@ -35,9 +35,17 @@ export class CustomTrackingUiComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.orgId = params['orgId'];
-      this.orgId = Number(this.orgId);
+    // this.route.params.subscribe(params => {
+    //   this.orgId = params['orgId'];
+    //   this.orgId = Number(this.orgId);
+    this.trackingDetailsService.getTrackingDetails(this.orgId)
+    .subscribe( result => {
+      console.log(result);
+      this.head = result.head;
+      this.body = result.body;
+      this.eventRegistration = result.eventRegistration;
+    }, error => {
+      console.log(error);
     });
   }
 
