@@ -1,16 +1,14 @@
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../shared/services/data.service';
 import { TrackingDetailsService } from '../shared/services/tracking-details.service';
 import { ITrackingDetails } from '../shared/interfaces/tracking-details.interface';
-import { Route, Router } from '../../../node_modules/@angular/router';
+import { Router, ActivatedRoute } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-custom-tracking-ui',
   templateUrl: './custom-tracking-ui.component.html',
   styleUrls: ['./custom-tracking-ui.component.css']
 })
-
 export class CustomTrackingUiComponent implements OnInit {
   public trackingDetailsForm: FormGroup;
   submitted: boolean;
@@ -21,35 +19,45 @@ export class CustomTrackingUiComponent implements OnInit {
   eventRegistration: string;
 
   getTrackingDetails(orgId: number) {
-    this.trackingDetailsService.getTrackingDetails(orgId)
-        .subscribe(result => {
-            this.trackingDetails = result;
-        });
-        }
+    this.trackingDetailsService.getTrackingDetails(orgId).subscribe(result => {
+      this.trackingDetails = result;
+    });
+  }
 
-  constructor( private trackingDetailsService: TrackingDetailsService, public formBuilder: FormBuilder, private router: Router) {
+  constructor(private trackingDetailsService: TrackingDetailsService, public formBuilder: FormBuilder, private router: Router
+  , private route: ActivatedRoute) {
     this.trackingDetailsForm = this.formBuilder.group({
+      orgId: this.formBuilder.control('', []),
       head: this.formBuilder.control('', []),
       body: this.formBuilder.control('', []),
       eventRegistration: this.formBuilder.control('', [])
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.orgId = params['orgId'];
+      this.orgId = Number(this.orgId);
+    });
+  }
 
   public submit() {
     this.submitted = true;
-    const trackingDetails = <ITrackingDetails>Object.assign({}, this.trackingDetailsForm.getRawValue());
+    const trackingDetails = <ITrackingDetails>(
+      Object.assign({}, this.trackingDetailsForm.getRawValue())
+    );
     console.log(event);
     if (this.trackingDetailsForm.valid) {
-        this.trackingDetailsService.addTrackingDetails(trackingDetails)
-            .subscribe(result => {
-                this.router.navigate(['/registration/' + result.orgId]);
-            }, (error) => {
-                console.log(error);
-            });
+      this.trackingDetailsService.addTrackingDetails(trackingDetails).subscribe(
+        result => {
+          this.router.navigate(['/registration/' + this.orgId]);
+        },
+        error => {
+          console.log(error);
+        }
+      );
     } else {
-        console.log(this.trackingDetailsForm.errors);
+      console.log(this.trackingDetailsForm.errors);
     }
   }
 }

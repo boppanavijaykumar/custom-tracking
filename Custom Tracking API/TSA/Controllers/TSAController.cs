@@ -29,11 +29,19 @@ namespace TSA.Controllers
         {
             using (var OrgContext = new TsaContext())
             {
-                OrgContext.CustomTrackingCode.Add(OrgDetails);
-                OrgContext.SaveChanges();
+                var userDetails = OrgContext.CustomTrackingCode.Where(q => q.OrgId == OrgDetails.OrgId).SingleOrDefault();
+                if( userDetails != null)
+                {
+                    OrgContext.CustomTrackingCode.Update(OrgDetails);
+                    OrgContext.SaveChanges();
+                }   
+                else
+                {
+                    OrgContext.CustomTrackingCode.Add(OrgDetails);
+                    OrgContext.SaveChanges();
+                }
             }
                 return Ok(OrgDetails);
         }
     }
 }
-
