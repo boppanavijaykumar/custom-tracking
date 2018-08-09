@@ -7038,7 +7038,7 @@
       ]
     },
     "Microsoft.Extensions.PlatformAbstractions/1.1.0": {
-      "sha512": "UMlN++q5qqzQ2HH+uOrKxN5fmBXMQDhrYkSaPJxhmyzfJaFPirrVr1raim/Ocq1psAZoB9+7JSAf0GDAX35wUg==",
+      "sha512": "H6ZsQzxYw/6k2DfEQRXdC+vQ6obd6Uba3uGJrnJ2vG4PRXjQZ7seB13JdCfE72abp8E6Fk3gGgDzfJiLZi5ZpQ==",
       "type": "package",
       "path": "microsoft.extensions.platformabstractions/1.1.0",
       "files": [
@@ -13250,23 +13250,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Shishika.Bethireddy\\.nuget\\packages\\": {},
+    "C:\\Users\\Vijay.Boppana\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Assignments\\Git\\custom-tracking\\Custom Tracking API\\TSA\\TSA.csproj",
+      "projectUniqueName": "D:\\assignments\\custom-tracking\\Custom Tracking API\\TSA\\TSA.csproj",
       "projectName": "TSA",
-      "projectPath": "D:\\Assignments\\Git\\custom-tracking\\Custom Tracking API\\TSA\\TSA.csproj",
-      "packagesPath": "C:\\Users\\Shishika.Bethireddy\\.nuget\\packages\\",
-      "outputPath": "D:\\Assignments\\Git\\custom-tracking\\Custom Tracking API\\TSA\\obj\\",
+      "projectPath": "D:\\assignments\\custom-tracking\\Custom Tracking API\\TSA\\TSA.csproj",
+      "packagesPath": "C:\\Users\\Vijay.Boppana\\.nuget\\packages\\",
+      "outputPath": "D:\\assignments\\custom-tracking\\Custom Tracking API\\TSA\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Shishika.Bethireddy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vijay.Boppana\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

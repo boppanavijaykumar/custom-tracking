@@ -1,3 +1,4 @@
+import { TrackingDetails } from './../model/tracking-details.model';
 import { httpOptions } from './../helper/http-header.const';
 import { HttpClient } from '@angular/common/http';
 import { ITrackingDetails } from './../interfaces/tracking-details.interface';
@@ -36,8 +37,8 @@ export class TrackingDetailsService {
     throw new Error('not found');
   }
 
-  public getTrackingDetails(orgId: number): Observable<ITrackingDetails> {
+  public getTrackingDetails(orgId: number): Observable<TrackingDetails> {
     const getTrackingDetailsUrl = environment.config.baseUrl + `tsa/get/${orgId}`;
-    return this.http.get<ITrackingDetails>(getTrackingDetailsUrl);
+    return this.http.get<TrackingDetails>(getTrackingDetailsUrl);
   }
 }
