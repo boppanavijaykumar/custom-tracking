@@ -45,21 +45,5 @@ namespace TSA.Controllers
             }
             return Ok(OrgDetails);
         }
-
-        //[HttpPut]
-        //[Route("update")]
-        //public ActionResult UpdateTrackingDetails([FromBody]CustomTrackingCode OrgDetails)
-        //{
-        //    using (var OrgContext = new TsaContext())
-        //    {
-        //        var userDetails = OrgContext.CustomTrackingCode.Where(q => q.OrgId == OrgDetails.OrgId).SingleOrDefault();
-        //        if (userDetails != null)
-        //        {
-        //            OrgContext.CustomTrackingCode.Update(OrgDetails);
-        //            OrgContext.SaveChanges();
-        //        }
-        //    }
-        //    return Ok(OrgDetails);
-        //}
     }
 }
